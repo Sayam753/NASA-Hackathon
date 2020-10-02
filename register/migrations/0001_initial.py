@@ -15,18 +15,35 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='MainSurvey',
+            name="MainSurvey",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(default='default.jpg', upload_to='profile_pics')),
-                ('electric', models.IntegerField(max_length=10)),
-                ('gas', models.IntegerField(max_length=10)),
-                ('oil', models.IntegerField(max_length=10)),
-                ('car', models.IntegerField(max_length=10)),
-                ('flights', models.IntegerField(max_length=10)),
-                ('newspaper', models.IntegerField(max_length=10)),
-                ('aluminium', models.IntegerField(max_length=10)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(default="default.jpg", upload_to="profile_pics"),
+                ),
+                ("electric", models.IntegerField(max_length=10)),
+                ("gas", models.IntegerField(max_length=10)),
+                ("oil", models.IntegerField(max_length=10)),
+                ("car", models.IntegerField(max_length=10)),
+                ("flights", models.IntegerField(max_length=10)),
+                ("newspaper", models.IntegerField(max_length=10)),
+                ("aluminium", models.IntegerField(max_length=10)),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

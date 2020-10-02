@@ -4,11 +4,13 @@ from django.utils import timezone
 
 
 CHOICES = (
-        ('option1', 'Yes'),
-        ('option2', 'No'),
-        ('option3', 'Yes'),
-        ('option4', 'No'),
-    )
+    ("option1", "Yes"),
+    ("option2", "No"),
+    ("option3", "Yes"),
+    ("option4", "No"),
+)
+
+
 class Carbon_footprint(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     electric = models.IntegerField()
@@ -18,8 +20,7 @@ class Carbon_footprint(models.Model):
     flights = models.IntegerField()
     meal = models.CharField(max_length=10, choices=CHOICES)
     day = models.CharField(max_length=10, choices=CHOICES)
-    date        =  models.DateField(default=timezone.now)
+    date = models.DateField(default=timezone.now)
 
-   
     def __str__(self):
-        return f'{self.user.username} carbon_footprint'
+        return f"{self.user.username} carbon_footprint"
